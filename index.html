@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            padding: 20px;
+        }
+
+        .weather-card {
+            width: 100%;
+            max-width: 380px;
+            padding: 30px 22px;
+            border-radius: 25px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            color: #263b64;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccd5e0;
+            border-radius: 12px;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 12px;
+            background: #4361ee;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:active {
+            background: #3046bd;
+        }
+
+        .weather-icon {
+            font-size: 70px;
+            margin: 20px 0 10px;
+        }
+
+        .temperature {
+            font-size: 48px;
+            color: #263b64;
+            font-weight: bold;
+        }
+
+        .condition {
+            font-size: 20px;
+            color: #52627a;
+            margin: 8px 0;
+        }
+
+        .note {
+            font-size: 13px;
+            color: #64748b;
+            margin-top: 22px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="weather-card">
+        <h1>🌦️ Weather App</h1>
+        <p class="subtitle">Check the weather in your city</p>
+
+        <input
+            type="text"
+            id="city"
+            placeholder="Enter city name"
+        >
+
+        <button onclick="showWeather()">
+            Check Weather 🔍
+        </button>
+
+        <div class="weather-icon">🌤️</div>
+        <div class="temperature">--°C</div>
+        <div class="condition">Search for a city</div>
+
+        <p class="note">
+            Your simple weather dashboard<br>
+            Made with HTML, CSS and JavaScript
+        </p>
+    </div>
+
+    <script>
+        function showWeather() {
+            const city = document.getElementById("city").value.trim();
+
+            if (city === "") {
+                alert("Please enter a city name!");
+                return;
+            }
+
+            alert(
+                "Welcome! You searched for " + city +
+                ". Live weather data will be added next."
+            );
+        }
+    </script>
+</body>
+</html>
